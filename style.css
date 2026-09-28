@@ -1,0 +1,346 @@
+/* =========================================================
+   Printorldz - style.css
+   Authentic circa-2008 web styling. Pure CSS, no frameworks.
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #d6e4f0;
+  background-image: url("images/bg-tile.svg");
+  color: #1a1a2e;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+a {
+  color: #003399;
+  text-decoration: underline;
+}
+a:visited {
+  color: #660099;
+}
+a:hover {
+  color: #ff6600;
+}
+
+/* ---------------- Page wrapper (fixed-ish width, table ambiance) ---------------- */
+#page {
+  max-width: 1000px;
+  margin: 10px auto;
+  background: #ffffff;
+  border: 3px solid #003366;
+  box-shadow: 3px 3px 6px #888888;
+}
+
+/* ---------------- Marquee-style welcome banner (CSS animated, not <marquee>) ---------------- */
+.marquee-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: #000033;
+  border-bottom: 2px solid #ffcc00;
+  padding: 3px 0;
+}
+.marquee-track {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 18s linear infinite;
+  color: #ffff33;
+  font-weight: bold;
+  font-size: 13px;
+  font-family: Verdana, Arial, sans-serif;
+  text-shadow: 1px 1px 1px #000000;
+}
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    padding-left: 0;
+  }
+}
+
+/* ---------------- Header ---------------- */
+#header {
+  background-image: linear-gradient(to bottom, #4477cc 0%, #1a3d8f 50%, #0d1f4d 100%);
+  border-bottom: 3px solid #ffcc00;
+  padding: 14px 16px;
+  color: #ffffff;
+}
+#header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-family: "Comic Sans MS", Verdana, sans-serif;
+  letter-spacing: 1px;
+  color: #ffee00;
+  text-shadow: 2px 2px 2px #000000;
+}
+#header .tagline {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #cce0ff;
+  font-style: italic;
+}
+
+/* ---------------- Top nav bar ---------------- */
+#navbar {
+  background-image: linear-gradient(to bottom, #eeeeee 0%, #cccccc 45%, #aaaaaa 55%, #dddddd 100%);
+  border-bottom: 2px solid #666666;
+  padding: 6px 8px;
+}
+#navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#navbar li {
+  display: inline-block;
+  margin-right: 4px;
+}
+#navbar a {
+  display: inline-block;
+  padding: 5px 12px;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #d8d8d8 50%, #b0b0b0 100%);
+  border: 2px outset #ffffff;
+  color: #003366;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 12px;
+}
+#navbar a:hover {
+  background-image: linear-gradient(to bottom, #ffedb0 0%, #ffcc33 100%);
+  color: #663300;
+}
+#navbar a.current {
+  border-style: inset;
+  background-image: linear-gradient(to bottom, #b0b0b0 0%, #d8d8d8 100%);
+}
+
+/* ---------------- Layout: content + sidebar ---------------- */
+#layout {
+  display: table;
+  width: 100%;
+}
+#content {
+  display: table-cell;
+  vertical-align: top;
+  padding: 14px;
+  width: 74%;
+}
+#sidebar {
+  display: table-cell;
+  vertical-align: top;
+  width: 26%;
+  padding: 14px 10px;
+  background: #f0f4fb;
+  border-left: 2px solid #99aacc;
+}
+
+/* ---------------- Beveled boxes / buttons ---------------- */
+.beveled-box {
+  border: 2px outset #cccccc;
+  background: #f5f5f5;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+.btn {
+  display: inline-block;
+  padding: 6px 14px;
+  background-image: linear-gradient(to bottom, #ffffff 0%, #dddddd 50%, #b8b8b8 100%);
+  border: 2px outset #ffffff;
+  color: #003366;
+  font-weight: bold;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background-image: linear-gradient(to bottom, #ffedb0 0%, #ffcc33 100%);
+}
+.btn:active,
+.btn.pressed {
+  border-style: inset;
+}
+
+/* ---------------- Section headers with gradients ---------------- */
+h2.section-title {
+  background-image: linear-gradient(to right, #003366, #3366aa, #003366);
+  color: #ffffff;
+  padding: 5px 10px;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  border: 1px solid #001a33;
+  text-shadow: 1px 1px 1px #000000;
+}
+h3 {
+  color: #003366;
+  border-bottom: 2px dotted #99aacc;
+  padding-bottom: 2px;
+}
+
+/* ---------------- Tables ---------------- */
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 14px;
+  font-size: 11px;
+}
+table.data-table th {
+  background-image: linear-gradient(to bottom, #6699cc, #336699);
+  color: #ffffff;
+  border: 1px solid #003366;
+  padding: 5px;
+  text-align: left;
+}
+table.data-table td {
+  border: 1px solid #99aacc;
+  padding: 5px;
+  vertical-align: top;
+}
+table.data-table tr.alt {
+  background: #e8f0fb;
+}
+table.data-table tr:hover {
+  background: #fff3cc;
+}
+
+.status-active {
+  color: #007700;
+  font-weight: bold;
+}
+.status-legacy {
+  color: #cc7700;
+  font-weight: bold;
+}
+.status-discontinued {
+  color: #aa0000;
+  font-weight: bold;
+}
+
+.tag-freeware {
+  background: #cceecc;
+  color: #005500;
+  border: 1px solid #007700;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.tag-opensource {
+  background: #cce0ff;
+  color: #002266;
+  border: 1px solid #003399;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.tag-freetier {
+  background: #fff0bf;
+  color: #664400;
+  border: 1px solid #cc9900;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* ---------------- Store items ---------------- */
+.store-item {
+  border: 2px groove #99aacc;
+  background: #ffffff;
+  padding: 10px;
+  margin-bottom: 14px;
+}
+.store-item .price {
+  font-size: 15px;
+  font-weight: bold;
+  color: #aa0000;
+}
+.store-notice {
+  border: 2px dashed #cc0000;
+  background: #fff5f5;
+  color: #660000;
+  padding: 8px;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+
+/* ---------------- Affiliate placeholder banners ---------------- */
+.affiliate-banner {
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  border: 2px inset #999999;
+  background-image: linear-gradient(135deg, #ffcc00, #ff6600);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 11px;
+  text-align: center;
+  line-height: 60px;
+  text-shadow: 1px 1px 1px #663300;
+  text-decoration: none;
+}
+.affiliate-banner.alt2 {
+  background-image: linear-gradient(135deg, #33aaff, #003399);
+}
+.affiliate-banner.alt3 {
+  background-image: linear-gradient(135deg, #66cc66, #006600);
+}
+
+/* ---------------- Hit counter ---------------- */
+.hit-counter {
+  font-family: "Courier New", monospace;
+  background: #000000;
+  color: #00ff00;
+  border: 2px inset #333333;
+  padding: 3px 6px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* ---------------- Under construction ---------------- */
+.under-construction {
+  text-align: center;
+  margin: 6px 0;
+}
+
+/* ---------------- Footer ---------------- */
+#footer {
+  clear: both;
+  background: #eeeeee;
+  border-top: 3px solid #003366;
+  padding: 10px;
+  font-size: 11px;
+  text-align: center;
+  color: #333333;
+}
+#footer .best-viewed {
+  font-weight: bold;
+  color: #660000;
+}
+#footer hr {
+  border: none;
+  border-top: 1px dashed #999999;
+  margin: 6px 0;
+}
+
+.webring {
+  margin-top: 4px;
+  font-size: 10px;
+  color: #666666;
+}
+
+blink-fake {
+  animation: blinker 1.2s linear infinite;
+}
+@keyframes blinker {
+  50% { opacity: 0; }
+}
